@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       env:
         VERSION: ""
     - name: Install Theos
       run: |
-        sudo apt-get install fakeroot git perl clang-6.0 build-essential -y
+        sudo apt-get install fakeroot git perl clang build-essential -y
         echo "export THEOS=~/theos" >> ~/.profile
         source ~/.profile
         git clone --recursive https://github.com/theos/theos.git $THEOS
